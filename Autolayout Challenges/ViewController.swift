@@ -29,10 +29,25 @@ class ViewController: UIViewController {
         self.view.addSubview(tealView) //before constraints activated req
         
         NSLayoutConstraint.activate([tealTop,tealWidth,tealHeight,tealLeading])
+//
+        NSLayoutConstraint.activate([tealView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                                     tealView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),])
+        //
+
+
+        let blueView = UIView()
+        blueView.backgroundColor = UIColor.blue
+        blueView.translatesAutoresizingMaskIntoConstraints = false
         
+        self.view.addSubview(blueView)
+        
+        NSLayoutConstraint.activate([blueView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                                     blueView.topAnchor.constraint(equalTo: self.view.centerYAnchor),
+                                     blueView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5),
+                                     blueView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+                                     ])
         
     }
-
 
 }
 
