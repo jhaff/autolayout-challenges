@@ -89,3 +89,38 @@ class ViewController: UIViewController { //for the second challenges
                                      ])
     }
 }
+
+
+// Place two views side by side equally
+
+class ViewController3: UIViewController { //for the third challenge
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        let tealView = UIView()
+        tealView.backgroundColor = UIColor.green
+        tealView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(tealView) //before constraints activated req
+                //
+        NSLayoutConstraint.activate([tealView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40),
+                                     tealView.topAnchor.constraint(equalTo: self.view.topAnchor, constant:40),
+                                     tealView.heightAnchor.constraint(equalToConstant: 150),
+                                     tealView.widthAnchor.constraint(equalToConstant: 150)])        //
+        
+        
+        let blueView = UIView()
+        blueView.backgroundColor = UIColor.blue
+        blueView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(blueView)
+        
+        NSLayoutConstraint.activate([blueView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,        constant: -40),
+                                     blueView.topAnchor.constraint(equalTo: self.view.topAnchor, constant:40),
+                                     blueView.heightAnchor.constraint(equalToConstant: 150),
+                                     blueView.widthAnchor.constraint(equalToConstant: 150),
+                                     ])
+    }
+}
